@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <title>Graph Analysis</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    
+</head>
+<body>
+    <div class="container-fluid d-flex flex-column align-items-center">
+        <h1 class="glow text-center my-5"> 📊 Graphical Analysis of both Algorithm 📈</h1>
+        <input type="hidden" name="Optimized" value="{{optimised_time}}" id="optimised_time">
+        <input type="hidden" name="original" value="{{original_time}}" id="original_time">
+        <input type="hidden" name="original" value="{{input}}" id="input">
+        <div class="container d-flex flex-column align-items-center border border-5 border-success">
+            <div id="columnchart_material" style="width: 800px; height: 500px;" class="my-3"></div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        var original_time = document.getElementById("original_time");
+        var optimised_time = document.getElementById("optimised_time");
+        var input = document.getElementById("input");
+        google.charts.load('current', {'packages':['bar']});
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Algorithm', 'Optimised Bankers Algorithm', 'Original Bankers Algorithm'],
+                ['Input', input.value, input.value],
+                ['Execution Time', original_time.value,optimised_time.value],
+            ]);
+
+            var options = {
+                chart: {
+                    title: 'Algorithm Performance',
+                    subtitle: "Original Banker's Algorithm, Optimized Banker's Algorithm ",
+                }
+            };
+
+            var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+            chart.draw(data, google.charts.Bar.convertOptions(options));
+        }
+        google.charts.setOnLoadCallback(drawChart);
+      </script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"></script>
+    
+</body>
+</html>

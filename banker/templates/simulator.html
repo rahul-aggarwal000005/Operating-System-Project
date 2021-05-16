@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'simulator.css' %}">
+    <title>Banker's Algorithm</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1 class="text-danger text-center my-4">🔥 Simulator 🔥</h1>
+        <div class="row">
+            <div class="container px-5">
+                <h4 class="text-light text-center mb-4"> ⭐ Needed Matrix ⭐ </h4>
+                <table class="table table-bordered text-center mb-5">
+                    <thead>
+                        <tr class="text-warning">
+                            <th scope="col" class="text-danger">#</th>
+                            {% for i in nres %}
+                            <th scope="col" class="text-danger">R{{i}}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for key,value in pval.items %}
+                        <tr>
+                            <th scope="row" class="text-danger">{{value.pid}}</th>
+                            {% for val in value.array %}
+                            <td class="text-warning"><strong> {{val}} </strong></td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <br>
+                <h4 class="text-light text-center mb-3"> ⭐ Available Resources ⭐ </h4>
+                <table class="table table-bordered text-center mb-5">
+                    <thead>
+                        <tr class="text-danger">
+                            {% for i in nres %}
+                            <th scope="col">R{{i}}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for x in avail %}
+                        <td class="text-warning"> <strong> {{x}} </strong></td>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-6 border-end border-bottom border-top border-warning border-5 mb-5 pt-4">
+                <h3 class="text-white text-center"> Original banker's Algorithm </h3>
+                <p>
+                <h3 class="text-success text-center"> Results of the Simulation </h3>
+                <div class="container text-center">
+                    <ul class="list-unstyled">
+                        {% for str in original %}
+                        {% if str == "Analyzing" %}
+                        <h4 class="text-warning my-4"> ✨✨ Analyzing ✨✨ </h4>
+                        {% elif str == "✅ System is Safe ✅" %}
+                        <h5 class="text-success my-4"> ✅ System is Safe ✅ </h5>
+                        {% else %}
+                        <li class="my-4"> {{str}} </li>
+                        {% endif %}
+
+                        {% endfor %}
+                    </ul>
+                </div>
+                </p>
+                <h4 class="text-warning text-center"> ⌚ Time Taken : {{optimised_time}} units </h4>
+            </div>
+            <div class="col-6 border-bottom border-warning border-top border-5 mb-5 pt-4">
+                <h3 class="text-white text-center"> Optimized banker's Algorithm </h3>
+                <p>
+                <h3 class="text-success text-center"> Results of the Simulation </h3>
+                <div class="container text-center">
+                    <ul class="list-unstyled">
+                        {% for str in optimised %}
+                        {% if str == "Analyzing" %}
+                        <h4 class="text-warning my-4"> ✨✨ Analyzing ✨✨ </h4>
+                        {% elif str == "✅ System is Safe ✅" %}
+                        <h5 class="text-success my-4"> ✅ System is Safe ✅ </h5>
+                        {% else %}
+                        <li class="my-4"> {{str}} </li>
+                        {% endif %}
+
+                        {% endfor %}
+                    </ul>
+                </div>
+                </p>
+                <h4 class="text-warning text-center"> ⌚ Time Taken : {{original_time}} units </h4>
+            </div>
+            <hr class="bg-light">
+        </div>
+        <a href="/graph" class="btn btn-success btn-lg my-4 mx-2" target="_blank"> Graph Analysis </a> 
+        <a href="https://github.com/rahul-aggarwal000005/Banker-s-Algorithm-Project" target="_blank" class="btn btn-dark btn-lg my-4 mx-2"> Code For Algorithm </a> 
+        <button onClick="window.location.reload();" class="btn btn-primary btn-lg "> Simulate Again</button>
+    </div>
+
+    <script>
+
+    
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

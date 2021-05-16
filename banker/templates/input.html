@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'input.css' %}">
+    <title>Banker's Algorithm Input</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <h1 class="text-center my-5 hfont"> Input for the Banker's Algorithm</h1>
+        <div class="container-fluid my-2">
+            <div class="box mx-auto px-2 py-2">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col d-flex justify-center flex-column">
+                            {% comment %} Number of processes {% endcomment %}
+                            <div class="row my-3">
+                                <div class="col-6 text-end">
+                                    <h4 class="fancy text-danger">Number of Processes : </h4>
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" id="nop" name="nop" value = {{nop}}>
+                                </div>
+                            </div>
+                            {% comment %} Number of resources {% endcomment %}
+                            <div class="row my-3">
+                                <div class="col-6 text-end">
+                                    <h4 class="fancy text-danger">Number of Resources : </h4>
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" id="nor" name="nor" value = {{nor}}>
+                                </div>
+                            </div>
+                            {% comment %} Instances of resource 1  {% endcomment %}
+                            <div class="row my-3">
+                                <div class="col-6 text-end">
+                                    <h6 class="text-warning">Instances of Resource 1 : </h6>
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" name="r1" value = {{r1}}>
+                                </div>
+                            </div>
+                            {% comment %} Instances of resource 2 {% endcomment %}
+                            <div class="row my-3">
+                                <div class="col-6 text-end">
+                                    <h6 class="text-warning">Instances of Resource 2 : </h6>
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" name="r2" value = {{r2}}>
+                                </div>
+                            </div>
+                            {% comment %} Instances of resource 3 {% endcomment %}
+                            <div class="row my-3">
+                                <div class="col-6 text-end">
+                                    <h6 class="text-warning">Instances of Resource 3 : </h6>
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" name="r3" value = {{r3}}>
+                                </div>
+                            </div>
+                            {% comment %} Instances of resource 4 {% endcomment %}
+                            <div class="row my-3">
+                                <div class="col-6 text-end">
+                                    <h6 class="text-warning">Instances of Resource 4 : </h6>
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" name="r4" value = {{r4}}>
+                                </div>
+                            </div>
+                            {% comment %} Instances of resource 5 {% endcomment %}
+                            <div class="row my-3">
+                                <div class="col-6 text-end">
+                                    <h6 class="text-warning">Instances of Resource 5 : </h6>
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" name="r5" value = {{r5}}>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-5 d-flex justify-content-center align-items-center flex-column mx-5">
+                            <h3 class="text-center text-danger"> Allocated Resources</h3>
+                            <table class="table table-bordered text-center">
+                                <thead>
+                                    <tr class="text-warning">
+                                        <th scope="col">#</th>
+                                        <th scope="col">R1</th>
+                                        <th scope="col">R2</th>
+                                        <th scope="col">R3</th>
+                                        <th scope="col">R4</th>
+                                        <th scope="col">R5</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row" class="text-warning">1</th>
+                                        <td><input type="text" name="0" value={{alloc.0.0}}></td>
+                                        <td><input type="text" name="1" value={{alloc.0.1}}></td>
+                                        <td><input type="text" name="2" value={{alloc.0.2}}></td>
+                                        <td><input type="text" name="3" value={{alloc.0.3}}></td>
+                                        <td><input type="text" name="4" value={{alloc.0.4}}></td>   
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-warning">2</th>
+                                        <td><input type="text" name="10" value={{alloc.1.0}}></td>
+                                        <td><input type="text" name="11" value={{alloc.1.1}}></td>
+                                        <td><input type="text" name="12" value={{alloc.1.2}}></td>
+                                        <td><input type="text" name="13" value={{alloc.1.3}}></td>
+                                        <td><input type="text" name="14" value={{alloc.1.4}}></td>   
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-warning">3</th>
+                                        <td><input type="text" name="20" value={{alloc.2.0}}></td>
+                                        <td><input type="text" name="21" value={{alloc.2.1}}></td>
+                                        <td><input type="text" name="22" value={{alloc.2.2}}></td>
+                                        <td><input type="text" name="23" value={{alloc.2.3}}></td>
+                                        <td><input type="text" name="24" value={{alloc.2.4}}></td>   
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-warning">4</th>
+                                        <td><input type="text" name="30" value={{alloc.3.0}}></td>
+                                        <td><input type="text" name="31" value={{alloc.3.1}}></td>
+                                        <td><input type="text" name="32" value={{alloc.3.2}}></td>
+                                        <td><input type="text" name="33" value={{alloc.3.3}}></td>
+                                        <td><input type="text" name="34" value={{alloc.3.4}}></td>   
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-warning">5</th>
+                                        <td><input type="text" name="40" value={{alloc.4.0}}></td>
+                                        <td><input type="text" name="41" value={{alloc.4.1}}></td>
+                                        <td><input type="text" name="42" value={{alloc.4.2}}></td>
+                                        <td><input type="text" name="43" value={{alloc.4.3}}></td>
+                                        <td><input type="text" name="44" value={{alloc.4.4}}></td>   
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-warning">6</th>
+                                        <td><input type="text" name="50" value={{alloc.5.0}}></td>
+                                        <td><input type="text" name="51" value={{alloc.5.1}}></td>
+                                        <td><input type="text" name="52" value={{alloc.5.2}}></td>
+                                        <td><input type="text" name="53" value={{alloc.5.3}}></td>
+                                        <td><input type="text" name="54" value={{alloc.5.4}}></td>   
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-warning">7</th>
+                                        <td><input type="text" name="60" value={{alloc.6.0}}></td>
+                                        <td><input type="text" name="61" value={{alloc.6.1}}></td>
+                                        <td><input type="text" name="62" value={{alloc.6.2}}></td>
+                                        <td><input type="text" name="63" value={{alloc.6.3}}></td>
+                                        <td><input type="text" name="64" value={{alloc.6.4}}></td>   
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-warning">8</th>
+                                        <td><input type="text" name="70" value={{alloc.7.0}}></td>
+                                        <td><input type="text" name="71" value={{alloc.7.1}}></td>
+                                        <td><input type="text" name="72" value={{alloc.7.2}}></td>
+                                        <td><input type="text" name="73" value={{alloc.7.3}}></td>
+                                        <td><input type="text" name="74" value={{alloc.7.4}}></td>   
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-warning">9</th>
+                                        <td><input type="text" name="80" value={{alloc.8.0}}></td>
+                                        <td><input type="text" name="81" value={{alloc.8.1}}></td>
+                                        <td><input type="text" name="82" value={{alloc.8.2}}></td>
+                                        <td><input type="text" name="83" value={{alloc.8.3}}></td>
+                                        <td><input type="text" name="84" value={{alloc.8.4}}></td>   
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-warning">10</th>
+                                        <td><input type="text" name="90" value={{alloc.9.0}}></td>
+                                        <td><input type="text" name="91" value={{alloc.9.1}}></td>
+                                        <td><input type="text" name="92" value={{alloc.9.2}}></td>
+                                        <td><input type="text" name="93" value={{alloc.9.3}}></td>
+                                        <td><input type="text" name="94" value={{alloc.9.4}}></td>   
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="col-5 d-flex justify-center flex-column mx-5">
+                            <h3 class="text-center text-danger"> Maximum Needed Resources</h3>
+                            <table class="table table-bordered text-center">
+                                <thead>
+                                    <tr class="text-warning">
+                                        <th scope="col">#</th>
+                                        <th scope="col">R1</th>
+                                        <th scope="col">R2</th>
+                                        <th scope="col">R3</th>
+                                        <th scope="col">R4</th>
+                                        <th scope="col">R5</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row" class="text-warning">1</th>
+                                        <td><input type="text" name="m0" value={{maxneed.0.0}}></td>
+                                        <td><input type="text" name="m1" value={{maxneed.0.1}}></td>
+                                        <td><input type="text" name="m2" value={{maxneed.0.2}}></td>
+                                        <td><input type="text" name="m3" value={{maxneed.0.3}}></td>
+                                        <td><input type="text" name="m4" value={{maxneed.0.4}}></td>   
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-warning">2</th>
+                                        <td><input type="text" name="m10" value={{maxneed.1.0}}></td>
+                                        <td><input type="text" name="m11" value={{maxneed.1.1}}></td>
+                                        <td><input type="text" name="m12" value={{maxneed.1.2}}></td>
+                                        <td><input type="text" name="m13" value={{maxneed.1.3}}></td>
+                                        <td><input type="text" name="m14" value={{maxneed.1.4}}></td>   
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-warning">3</th>
+                                        <td><input type="text" name="m20" value={{maxneed.2.0}}></td>
+                                        <td><input type="text" name="m21" value={{maxneed.2.1}}></td>
+                                        <td><input type="text" name="m22" value={{maxneed.2.2}}></td>
+                                        <td><input type="text" name="m23" value={{maxneed.2.3}}></td>
+                                        <td><input type="text" name="m24" value={{maxneed.2.4}}></td>   
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-warning">4</th>
+                                        <td><input type="text" name="m30" value={{maxneed.3.0}}></td>
+                                        <td><input type="text" name="m31" value={{maxneed.3.1}}></td>
+                                        <td><input type="text" name="m32" value={{maxneed.3.2}}></td>
+                                        <td><input type="text" name="m33" value={{maxneed.3.3}}></td>
+                                        <td><input type="text" name="m34" value={{maxneed.3.4}}></td>   
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-warning">5</th>
+                                        <td><input type="text" name="m40" value={{maxneed.4.0}}></td>
+                                        <td><input type="text" name="m41" value={{maxneed.4.1}}></td>
+                                        <td><input type="text" name="m42" value={{maxneed.4.2}}></td>
+                                        <td><input type="text" name="m43" value={{maxneed.4.3}}></td>
+                                        <td><input type="text" name="m44" value={{maxneed.4.4}}></td>   
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-warning">6</th>
+                                        <td><input type="text" name="m50" value={{maxneed.5.0}}></td>
+                                        <td><input type="text" name="m51" value={{maxneed.5.1}}></td>
+                                        <td><input type="text" name="m52" value={{maxneed.5.2}}></td>
+                                        <td><input type="text" name="m53" value={{maxneed.5.3}}></td>
+                                        <td><input type="text" name="m54" value={{maxneed.5.4}}></td>   
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-warning">7</th>
+                                        <td><input type="text" name="m60" value={{maxneed.6.0}}></td>
+                                        <td><input type="text" name="m61" value={{maxneed.6.1}}></td>
+                                        <td><input type="text" name="m62" value={{maxneed.6.2}}></td>
+                                        <td><input type="text" name="m63" value={{maxneed.6.3}}></td>
+                                        <td><input type="text" name="m64" value={{maxneed.6.4}}></td>   
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-warning">8</th>
+                                        <td><input type="text" name="m70" value={{maxneed.7.0}}></td>
+                                        <td><input type="text" name="m71" value={{maxneed.7.1}}></td>
+                                        <td><input type="text" name="m72" value={{maxneed.7.2}}></td>
+                                        <td><input type="text" name="m73" value={{maxneed.7.3}}></td>
+                                        <td><input type="text" name="m74" value={{maxneed.7.4}}></td>   
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-warning">9</th>
+                                        <td><input type="text" name="m80" value={{maxneed.8.0}}></td>
+                                        <td><input type="text" name="m81" value={{maxneed.8.1}}></td>
+                                        <td><input type="text" name="m82" value={{maxneed.8.2}}></td>
+                                        <td><input type="text" name="m83" value={{maxneed.8.3}}></td>
+                                        <td><input type="text" name="m84" value={{maxneed.8.4}}></td>   
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-warning">10</th>
+                                        <td><input type="text" name="m90" value={{maxneed.9.0}}></td>
+                                        <td><input type="text" name="m91" value={{maxneed.9.1}}></td>
+                                        <td><input type="text" name="m92" value={{maxneed.9.2}}></td>
+                                        <td><input type="text" name="m93" value={{maxneed.9.3}}></td>
+                                        <td><input type="text" name="m94" value={{maxneed.9.4}}></td>   
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row mt-2">  
+                        <div class="col text-center"> 
+                            <button type="submit" onclick="myFunction()" class="btn btn-warning"> Save Input </button>
+                            <a href="/input" class="btn btn-danger mx-3"> Reset </a>
+                            <a href="/simulator" class="btn btn-success"> Simulator </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("nor").getAttribute("value");
+            var y = document.getElementById("nop").getAttribute("value");
+            alert("Successfull Saved");
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"></script>
+    <script src="{% static 'all.min.js' %}"></script>
+</body>
+</html>

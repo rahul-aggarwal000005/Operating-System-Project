@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Banker's Algorithm</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <h1 class="glow text-center my-5"> Banker's Algorithm</h1>
+        <div class="row text-white">
+            <div class="col-sm-6 border-end border-5 border-warning">
+                <div class="mt-4 mx-2">
+                    <h3 class="text-center text-warning"> What is Deadlock ?</h3>
+                    <p class="text-left mt-3">
+                        Deadlock is an indefinite blocking condition, occurs
+                        when two or more processes are each waiting for each other to
+                        release a resource. One way to overcome the deadlock problem
+                        in operating system environment is deadlock avoidance using
+                        Bankers safety algorithm. Safety algorithm decides whether
+                        the system will be in safe or unsafe state, on the basis of
+                        processes needs and its availability.
+                    </p>
+                </div>
+                <div class="mt-5">
+                    <h3 class="text-center text-warning"> What is Banker's Algorithm ?</h3>
+                    <p class="text-left mt-3">
+                        Banker's Algorithm is used majorly in the banking system to avoid deadlock. It helps you to identify whether 
+                        a loan will be given or not.This algorithm is used to test for safely simulating the allocation for determining 
+                        the maximum amount available for all resources. It also checks for all the possible activities before
+                        determining whether allocation should be continued or not.
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-6 text-center">
+                <h3 class="mt-4 mb-3 text-warning fancy"> Characteristics of Banker's Algorithm </h3>
+                <ul class="text-start" style="list-style:none">
+                    <li class="mt-3">⭐ Keep many resources that satisfy the requirement of at least one client</li>
+                    <li class="mt-3">⭐ Whenever a process gets all its resources, it needs to return them in a restricted period.</li>
+                    <li class="mt-3">⭐ When a process requests a resource, it needs to wait</li>
+                    <li class="mt-3">⭐ The system has a limited number of resources</li>
+                    <li class="mt-3">⭐ Advance feature for max resource allocation</li>
+                </ul>
+                <div class="row">
+                    <div class="col-sm-5 d-flex flex-column align-items-center justify-content-center mb-3">
+                        <h3 class="text-warning"> Simulator </h3>
+                        <a href="/input" class="btn btn-success btn-lg my-4"> Enter Input </a>
+                    </div>
+                    <div class="col-sm-7">
+                        <img src="{% static 'back.jpg' %}" alt="robot" width="430px" id="robot">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"></script>
+    
+</body>
+</html>
