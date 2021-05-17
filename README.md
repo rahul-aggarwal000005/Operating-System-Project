@@ -202,7 +202,13 @@
             print(s)
 
 ## Taking Input From The User
+![input1](/input1.PNG)
 
+![input2](/input2.PNG)
 
 ## Simulation Result 
 ![sim1](/sim1.PNG)
+
+![sim2](/sim2.PNG)
+
+![sim3](/sim3.PNG)
