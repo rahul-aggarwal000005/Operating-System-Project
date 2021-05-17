@@ -212,3 +212,6 @@
 ![sim2](/sim2.PNG)
 
 ![sim3](/sim3.PNG)
+
+## Graphical Analysis
+![graph](/graph.PNG)
