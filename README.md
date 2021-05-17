@@ -1,4 +1,9 @@
 # Banker's-Algorithm-Project
+### Pre requisites
+- _Install Django on your system_
+- _Run the server on the terminal by writing the command python manage.py runserver in the project directory._
+-  _open http://127.0.0.1:8000/ on web browser._
+
 ![frontpage](/first.PNG)
 ## Code For Original Banker's Algorithm (Python)
       global rows,cols,alloc,maxneed,r1,r2,r3,r4,r5,needed,initialavailable,original_result
