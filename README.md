@@ -201,5 +201,8 @@
             s += f"P{safe_sequence[len(safe_sequence)-1]+1}"
             print(s)
 
+## Taking Input From The User
+
+
 ## Simulation Result 
 ![sim1](/sim1.PNG)
